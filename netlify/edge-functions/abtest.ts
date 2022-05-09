@@ -26,7 +26,10 @@ export default async (request: Request, context: Context) => {
     value: newBucketValue,
   });
 
-  return new Response(
-    `Congratulations! You have been assigned ${bucketName} **${newBucketValue}**. View your browser cookies to check it out!`,
-  );
+  //return new Response(
+    //`Congratulations! You have been assigned ${bucketName} **${newBucketValue}**. View your browser cookies to check it out!`,
+    
+  //);
+
+  return context.rewrite("https://www.google.com");
 };
