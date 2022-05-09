@@ -6,14 +6,14 @@ export default async (request: Request, context: Context) => {
   const bucket = context.cookies.get(bucketName);
 
   // return here if we find a cookie
-  if (bucket) {
+  if (bucket == "a") {
     //return new Response(`Welcome back! You were assigned ${bucketName} **${bucket}** when you last visited the site!`);
-    return context.rewrite("/something-to-serve-with-a-rewrite");
+    return context.rewrite("/something-to-serve-with-a-rewrite-A");
   }
 
   // if no "test_bucket" cookie is found, assign the user to a bucket
   // in this example we're using two buckets (a, b) with an equal weighting of 50/50
-  const weighting = 0.5;
+  const weighting = 0.9;
 
   // get a random number between (0-1)
   // this is a basic example and you may want to experiment
@@ -31,7 +31,7 @@ export default async (request: Request, context: Context) => {
     
   //);
 
-  return context.json({ splittest: "version1" });
+  return context.json({ splittest: "versionb" });
 
   /*  const joke = await fetch("https://icanhazdadjoke.com/", {
       "headers": {
