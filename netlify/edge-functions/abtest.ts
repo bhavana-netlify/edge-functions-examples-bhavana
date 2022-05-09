@@ -7,7 +7,8 @@ export default async (request: Request, context: Context) => {
 
   // return here if we find a cookie
   if (bucket) {
-    return new Response(`Welcome back! You were assigned ${bucketName} **${bucket}** when you last visited the site!`);
+    //return new Response(`Welcome back! You were assigned ${bucketName} **${bucket}** when you last visited the site!`);
+    return context.rewrite("/something-to-serve-with-a-rewrite");
   }
 
   // if no "test_bucket" cookie is found, assign the user to a bucket
