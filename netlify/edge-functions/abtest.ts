@@ -40,10 +40,12 @@ export default async (request: Request, context: Context) => {
     
   //);
   if (newBucketValue == "b") {
+    context.log("Hello from the logging service cookie A");
     return context.json({ splittest: "versionb" });
   }
 
   else{
+    context.log("Hello from the logging service cookie B");
     return context.json({ splittest: "versiona" });
   }
 
